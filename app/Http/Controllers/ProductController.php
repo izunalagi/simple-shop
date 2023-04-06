@@ -97,11 +97,19 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $file = $request->file('photo');
+        $filename = time() . '.' .
+        $file->getClientOriginalExtension();
+
+        $photo_path = $request->file('photo')->storeAs('public/products',$filename);
+        $photo_path = str_replace('public/','',$photo_path);
+
         $product = Product::find($id);
 
         $product->name = $request->name;
         $product->price = $request->price;
         $product->stocks = $request->stocks;
+        $product->photo = $photo_path;
         $product->save();
 
         return redirect()->route('product.index');
