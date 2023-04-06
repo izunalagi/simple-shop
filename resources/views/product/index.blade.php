@@ -24,6 +24,7 @@
                 <th>Name</th>
                 <th>Price</th>
                 <th>Stocks</th>
+                <th>Photo</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -34,8 +35,19 @@
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->price }}</td>
                     <td>{{ $item->stocks }}</td>
+                    <td>
+                        @if ($item->photo != null)
+                            <div style="width:100px">
+                                <img src="{{ asset('storage/' . $item->photo) }}" class="img-fluid" alt="...">
+
+                            </div>
+                        @else
+                            <p class="text-info">tidak ada foto</p>
+                        @endif
+                    </td>
                     <td class="d-flex">
-                        <a href="{{ route('product.edit', $item->id) }}" type="button" class="btn btn-primary me-3">Edit</a>
+                        <a href="{{ route('product.edit', $item->id) }}" type="button"
+                            class="btn btn-primary me-3">Edit</a>
                         <form action="{{ route('product.destroy', $item->id) }}" method="post">
                             @csrf
                             <button type="submit" class="btn btn-danger me-3">Delete</button>
