@@ -8,13 +8,12 @@
 
 @section('content')
     <h5 class="mb-4">Edit Product</h5>
-    <form action="{{ route('post.update', $post->id) }}" method="post"
-        enctype="multipart/form-data>
+    <form action="{{ route('post.update', $post->id) }}" method="post">
         @method('PUT')
         @csrf
         <div class="mb-3">
-        <label for="name" class="form-label">Judul</label>
-        <input type="text" name="title" class="form-control" id="title" value="{{ $post->title }}">
+            <label for="name" class="form-label">Judul</label>
+            <input type="text" name="title" class="form-control" id="title" value="{{ $post->title }}">
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Deskripsi</label>
