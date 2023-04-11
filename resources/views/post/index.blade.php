@@ -23,6 +23,7 @@
                 <th>No</th>
                 <th>Title</th>
                 <th>Description</th>
+                <th>photo</th>
                 @auth
                     <th>Action</th>
                 @endauth
@@ -34,6 +35,16 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->title }}</td>
                     <td>{{ $item->description }}</td>
+                    <td>
+                        @if ($item->photo != null)
+                            <div style="width:100px">
+                                <img src="{{ asset('storage/' . $item->photo) }}" class="img-fluid" alt="...">
+
+                            </div>
+                        @else
+                            <p class="text-info">tidak ada foto</p>
+                        @endif
+                    </td>
                     @auth
                         <td class="d-flex">
                             <a href="{{ route('post.edit', $item->id) }}" type="button" class="btn btn-primary me-3">Edit</a>
