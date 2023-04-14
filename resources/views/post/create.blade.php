@@ -8,7 +8,7 @@
 
 @section('content')
     <h5 class="mb-4">Tambah Post</h5>
-    <form action="{{ route('post.store') }}" method="post">
+    <form action="{{ route('admin.post.store') }}" method="post">
         @csrf
         <div class="mb-3">
             <label for="name" class="form-label">Judul</label>
@@ -21,7 +21,7 @@
 
         <div class="d-flex">
             <button type="submit" class="btn btn-primary me-3">Simpan</button>
-            <a href="{{ route('post.index') }}" type="button" class="btn btn-danger">Batal</a>
+            <a href="{{ route('admin.post.index') }}" type="button" class="btn btn-danger">Batal</a>
         </div>
     </form>
 @endsection

@@ -10,7 +10,7 @@
 
 @section('content')
 
-    <a type="button" class="btn btn-primary" href="{{ route('category.index') }}">kembali</a>
+    <a type="button" class="btn btn-primary" href="{{ route('admin.category.index') }}">kembali</a>
 
     <div class="input-form">
         <label for="">Nama kategori</label>

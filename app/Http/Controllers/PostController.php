@@ -27,7 +27,7 @@ class PostController extends Controller
             'description' => $data['description'],
         ]);
 
-        return redirect()->route('post.index');
+        return redirect()->route('admin.post.index');
     }
 
     public function edit(Request $request, $id)
@@ -43,7 +43,7 @@ class PostController extends Controller
         $post->description = $request->description;
         $post->save();
 
-        return redirect()->route('post.index');
+        return redirect()->route('admin.post.index');
     }
 
     public function destroy($id)
@@ -51,6 +51,6 @@ class PostController extends Controller
         $post = Post::find($id);
         $post->delete();
         
-        return redirect()->route('post.index');
+        return redirect()->route('admin.post.index');
     }
 }

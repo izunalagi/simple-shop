@@ -11,7 +11,7 @@
 @section('content')
     @auth
         <div class="d-flex mb-4">
-            <a href="{{ route('product.create') }}" type="button" class="ms-auto btn btn-primary">
+            <a href="{{ route('admin.product.create') }}" type="button" class="ms-auto btn btn-primary">
                 Tambah
             </a>
         </div>
@@ -46,9 +46,9 @@
                         @endif
                     </td>
                     <td class="d-flex">
-                        <a href="{{ route('product.edit', $item->id) }}" type="button"
+                        <a href="{{ route('admin.product.edit', $item->id) }}" type="button"
                             class="btn btn-primary me-3">Edit</a>
-                        <form action="{{ route('product.destroy', $item->id) }}" method="post">
+                        <form action="{{ route('admin.product.destroy', $item->id) }}" method="post">
                             @csrf
                             <button type="submit" class="btn btn-danger me-3">Delete</button>
                         </form>

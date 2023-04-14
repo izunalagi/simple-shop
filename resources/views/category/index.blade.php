@@ -31,7 +31,7 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->name }}</td>
                     <td class="d-flex">
-                        <a href="{{ route('category.detail', $item->id) }}" type="button"
+                        <a href="{{ route('admin.category.detail', $item->id) }}" type="button"
                             class="btn btn-primary me-3">Detail</a>
                         {{-- <a href="{{ route('product.edit', $item->id) }}" type="button" class="btn btn-primary me-3">Edit</a>
                         <form action="{{ route('product.destroy', $item->id) }}" method="post">

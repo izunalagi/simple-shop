@@ -10,7 +10,7 @@
 
 @section('content')
     <h5 class="mb-4">Tambah Product</h5>
-    <form action="{{ route('product.store') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('admin.product.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="name" class="form-label">Nama</label>
@@ -30,7 +30,7 @@
         </div>
         <div class="d-flex">
             <button type="submit" class="btn btn-primary me-3">Simpan</button>
-            <a href="{{ route('product.index') }}" type="button" class="btn btn-danger">Batal</a>
+            <a href="{{ route('admin.product.index') }}" type="button" class="btn btn-danger">Batal</a>
         </div>
     </form>
 @endsection
